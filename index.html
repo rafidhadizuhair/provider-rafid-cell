@@ -6,6 +6,24 @@
     <title>Halaman Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+    const loginForm = document.querySelector('form');
+    
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Mencegah refresh halaman
+        
+        const phone = document.getElementById('phone').value;
+        const password = document.getElementById('password').value;
+
+        // Validasi sederhana: pastikan tidak kosong
+        if (phone !== "" && password !== "") {
+            // Pindah ke halaman dashboard
+            window.location.href = "dashboard.html";
+        } else {
+            alert("Harap isi nomor handphone dan password!");
+        }
+    });
+</script>
 <body>
     <div class="login-container">
         <h1>Selamat Datang</h1>
